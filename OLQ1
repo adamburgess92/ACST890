@@ -1,0 +1,41 @@
+Question 1b
+
+#!/bin/bash
+# save as triplet-stop.sh
+# splits a sequence into triplets
+x=0
+while [ -n "${1:$x:3}" ]; do
+  seq=$seq${1:$x:3}" "
+  x=$(expr $x + 3)
+  if [ ${1:$x:3} == taa ] && [  $x -gt  6 ]; then
+    break
+  fi
+done
+echo "$seq"
+
+
+
+Question 2b
+
+sort -u tutes.txt
+
+
+Quesion 3a 
+
+egrep '^\s*?\w+\s+\w+\s+\w+\s*?$' structure.pdb
+
+
+Question 3b
+
+egrep '[-]\[0-9]+' structure.pdb
+
+
+Question 3c
+
+egrep '\s[-]?[0-9]\.[0-9]\s' structure.pdb
+
+
+Question 3d
+
+egrep '^.*HYDROGENASE.*$' structure.pdb | grep -v '^.*DEHYDROGENASE.*$'
+
