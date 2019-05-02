@@ -1,0 +1,42 @@
+
+a
+12.1  - works
+Change Beisel to Weisel
+sed -n s/BEISEL/WEISEL/p structure.pdb
+
+b
+12.2 
+Delete the first three lines
+sed '1,3d' structure.pdb
+Could be better
+
+c
+12.3
+Lines 5 - 10
+sed -n '5, 10p' structure.pdb
+
+
+d
+12.4
+Delete any line with the word ‘MET’
+sed  '/^.*\sMET\s.*$/d' structure.pdb
+
+e
+12.5 
+any HELIX line containing “ILE” (which is none)
+sed -n '/^HELIX.*\sILE\s/p’ structure.pdb
+
+f
+12.6
+Append *** to any line starting with H
+sed '/^H/ s/$/***/' structure.pdb
+
+g
+12.7
+sed -n 's/SEQRES/SEQ/p' structure.pdb
+
+h
+12.8
+Delete empty lines
+sed  '/^\s$/d' jabberwocky.txt
+
