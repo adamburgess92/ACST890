@@ -1,0 +1,90 @@
+QUESTION 1
+huckReplace.py:
+
+# Import the sys package - allows us to call the argv function
+import sys
+
+# Define a variable str that contains the txt file that will be provided as an argument, and read the file
+f = open(sys.argv[1])
+str = f.read()
+
+# Use pythons 'replace' method to convert all instances of Huck to HucK
+new = str.replace('Huck', 'HucK')
+
+# Print the result
+print new
+
+
+QUESTION 3:
+leapYear.py:
+
+# Import the sys module so that argv can be used
+import sys
+
+# Convert the input argument to an integer
+a=int(sys.argv[1])
+
+
+if a % 400 == 0:
+	print("it is a leap year")
+elif a % 100 == 0:
+	print("it is not a leap year")
+elif a % 4 == 0:
+	print("it is a leap year")
+else:
+	print("it is not a leap year")
+  
+  
+QUESTION 4:
+randomNumber.py:
+
+# Import the sys module, and random from the numpy module for random number generation
+import sys
+from numpy import random
+
+# Produce a random number between the two input arguments, and print result
+print(round(random.uniform(sys.argv[1], sys.argv[2])))
+
+
+
+QUESTION 5:
+betweenDate.py
+
+# Import the sys module for inputting arguments, and the datetime package for dealing with dates
+import sys
+import datetime
+
+# let m equal the first argument (month), and d equal the second argument (day)
+m = int(sys.argv[1])
+d = int(sys.argv[2])
+
+# produce a datetime object using inputs (m and d)
+x = datetime.datetime(2019, m, d)
+
+# Test whether the inputted date (x) falls between 20 Mar and 20 Jun:
+if x >= datetime.datetime(2019, 3, 20) and x <= datetime.datetime(2019, 6, 20):
+    print("True")
+else:
+    print("False")
+    
+
+QUESTION 6:
+return.py
+
+# Import the numpy package as np
+import numpy as np
+
+# Request user input for initial investment
+principal = float(input('Initial investment: '))
+
+# Request user input for the interest rate
+rate = float(input('Interest rate: '))
+
+# Request user input for the time to maturity
+time = float(input('Time (in years): '))
+
+# Print the result
+print(principal*np.exp(rate*time))
+
+
+
